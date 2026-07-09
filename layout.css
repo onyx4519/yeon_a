@@ -99,6 +99,19 @@
   color: var(--color-ink);
 }
 
+.dday {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 3px 12px;
+  letter-spacing: 0.03em;
+}
+
 /* ---- 프로필 정보 표 (2열: 항목 / 값) ---- */
 .profile-card {
   /* 내용 폭만큼만 박스가 생겨서, 부모(.profile-info)의 정렬 기준에 따라

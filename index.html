@@ -44,6 +44,7 @@
 
       <div class="profile-info">
         <h1 class="artist-name">연 아</h1>
+        <p class="dday" id="dday" aria-live="polite"></p>
 
         <div class="profile-card">
           <p class="profile-card-title">🌷 PROFILE 🌷</p>
@@ -140,6 +141,26 @@
   <footer class="site-footer">
 
   </footer>
+
+  <script>
+    (function () {
+      var START_DATE = new Date(2026, 5, 2);
+
+      function updateDday() {
+        var today = new Date();
+        var start = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
+        var now = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        var diffDays = Math.round((now - start) / (1000 * 60 * 60 * 24)) + 1;
+
+        var el = document.getElementById('dday');
+        if (el) {
+          el.textContent = 'Spoon D+' + diffDays;
+        }
+      }
+
+      updateDday();
+    })();
+  </script>
 
 </body>
 </html>
