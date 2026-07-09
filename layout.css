@@ -1,3 +1,9 @@
+/* =========================================================
+   layout.css
+   헤더 / 프로필 섹션 / 푸터
+   ========================================================= */
+
+/* ---- 헤더 ---- */
 .site-header {
   padding-block: var(--space-sm);
 }
@@ -17,12 +23,12 @@
   }
 }
 
-/*메인*/
+/* ---- 메인 ---- */
 .artist-main {
   padding-block: var(--space-lg) var(--space-xl);
 }
 
-/*프로필 섹션*/
+/* ---- 프로필 섹션 ---- */
 .profile-section {
   display: flex;
   flex-direction: column;
@@ -53,6 +59,8 @@
   border-radius: var(--radius-md);
   object-fit: cover;
   display: block;
+  /* 흰 테두리 + 라벤더 테두리를 box-shadow로 겹쳐 그려서
+     실제 사진 크기(width)에는 전혀 영향을 주지 않음 */
   box-shadow:
     0 0 0 3px var(--color-surface),
     0 0 0 5px var(--color-main);
@@ -73,7 +81,14 @@
 .profile-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-xs);
+}
+
+@media (min-width: 768px) {
+  .profile-info {
+    align-items: flex-start;
+  }
 }
 
 .artist-name {
@@ -84,21 +99,58 @@
   color: var(--color-ink);
 }
 
-.artist-tagline {
+/* ---- 프로필 정보 표 (2열: 항목 / 값) ---- */
+.profile-card {
+  /* 내용 폭만큼만 박스가 생겨서, 부모(.profile-info)의 정렬 기준에 따라
+     모바일에서는 화면 중앙에, 데스크톱에서는 왼쪽에 위치 */
+  width: fit-content;
+  max-width: 100%;
+}
+
+.profile-card-title {
   font-family: var(--font-body);
+  font-weight: 700;
+  font-style: italic;
   font-size: 0.95rem;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  text-align: left;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-table {
+  border-collapse: collapse;
+}
+
+.profile-table th,
+.profile-table td {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  padding: 3px 0;
+}
+
+.profile-table th {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-ink);
+  padding-right: var(--space-sm);
+  white-space: nowrap;
+}
+
+.profile-table th::before {
+  content: "❥𓂃 ";
+}
+
+.profile-table td {
+  font-weight: 500;
   color: var(--color-muted);
-  max-width: 40ch;
-  margin-inline: auto;
 }
 
-@media (min-width: 768px) {
-  .artist-tagline {
-    margin-inline: 0;
-  }
-}
-
-/* ---- footer ---- */
+/* ---- 푸터 ---- */
 .site-footer {
   padding-block: var(--space-lg);
   text-align: center;
