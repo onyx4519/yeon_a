@@ -1,10 +1,5 @@
-/* =========================================================
-   layout.css
-   헤더 / 프로필 섹션 / 푸터
-   ========================================================= */
-
-/* ---- 헤더 ---- */
-.site-header {
+/*헤더*/
+.artist-main {
   padding-block: var(--space-sm);
 }
 
@@ -23,12 +18,12 @@
   }
 }
 
-/* ---- 메인 ---- */
+/*메인*/
 .artist-main {
   padding-block: var(--space-lg) var(--space-xl);
 }
 
-/* ---- 프로필 섹션 ---- */
+/*프로필 섹션*/
 .profile-section {
   display: flex;
   flex-direction: column;
@@ -59,8 +54,6 @@
   border-radius: var(--radius-md);
   object-fit: cover;
   display: block;
-  /* 흰 테두리 + 라벤더 테두리를 box-shadow로 겹쳐 그려서
-     실제 사진 크기(width)에는 전혀 영향을 주지 않음 */
   box-shadow:
     0 0 0 3px var(--color-surface),
     0 0 0 5px var(--color-main);
@@ -112,10 +105,7 @@
   letter-spacing: 0.03em;
 }
 
-/* ---- 프로필 정보 표 (2열: 항목 / 값) ---- */
 .profile-card {
-  /* 내용 폭만큼만 박스가 생겨서, 부모(.profile-info)의 정렬 기준에 따라
-     모바일에서는 화면 중앙에, 데스크톱에서는 왼쪽에 위치 */
   width: fit-content;
   max-width: 100%;
 }
@@ -163,7 +153,7 @@
   color: var(--color-muted);
 }
 
-/* ---- 푸터 ---- */
+/*footer*/
 .site-footer {
   padding-block: var(--space-lg);
   text-align: center;
